@@ -1,5 +1,5 @@
 import { useAtom } from 'jotai';
-import { userAtom } from '../../store/atoms';
+import { userAtom } from '@/store/atoms';
 
 function Charge() {
   const [user, setUser] = useAtom(userAtom);
