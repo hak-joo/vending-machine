@@ -2,6 +2,7 @@ import React, { ChangeEvent } from 'react';
 import { useState } from 'react';
 import { useAtom } from 'jotai';
 import { userAtom } from '@/store/atoms';
+import ChargeMoneyBtnList from '@/components/charge/ChargeMoneyBtnList';
 
 function Charge() {
   const [user, setUser] = useAtom(userAtom);
@@ -41,6 +42,9 @@ function Charge() {
           border: '1px solid',
         }}
       />
+      <div>
+        <ChargeMoneyBtnList />
+      </div>
       <p style={{ color: 'red' }}>{errorMassage}</p>
       <button className="border border-gray-500 mr-10" onClick={chargeMoney}>
         충전
