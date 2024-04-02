@@ -1,9 +1,12 @@
-import Test from './Test';
 import './App.css';
+import Charge from './pages/charge/Charge';
+import Main from './pages/main/Main';
+
 function App() {
   return (
     <>
-      <Test />
+      <Charge />
+      <Main />
     </>
   );
 }
