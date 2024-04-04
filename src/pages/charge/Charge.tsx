@@ -3,7 +3,16 @@ import { useState } from 'react';
 import { useAtom } from 'jotai';
 import { userAtom } from '@/store/atoms';
 import ChargeMoneyBtnList from '@/components/charge/ChargeMoneyBtnList';
+import CommonBtn from '@/components/button/CommonBtn';
+import { ButtonProps } from '@/types/Button';
 import '@/styles/charge/Charge.css';
+
+// 충전 버튼 className
+const chargeBtnClassName: ButtonProps = {
+  textColor: 'white',
+  textAlign: 'center',
+  additionalClass: 'w-14 h-10 border-indigo-500/50 rounded-lg bg-indigo-500/50',
+};
 
 function Charge() {
   const [user, setUser] = useAtom(userAtom);
@@ -43,12 +52,9 @@ function Charge() {
         <div className="my-4 mx-16">
           <ChargeMoneyBtnList />
         </div>
-        <button
-          className="w-14 h-10 border border-indigo-500/50 rounded-lg  bg-indigo-500/50 text-white m-2"
-          onClick={chargeMoney}
-        >
+        <CommonBtn {...chargeBtnClassName} onClick={chargeMoney}>
           충전
-        </button>
+        </CommonBtn>
         <p className="font-bold m-2">현재 잔액 : {user.money}</p>
       </div>
     </div>
