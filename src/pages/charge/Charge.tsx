@@ -34,7 +34,11 @@ function Charge() {
   const handleMoneyChange = (e: ChangeEvent<HTMLInputElement>) => {
     const inputMoney = e.target.value;
     const replaceMoney = inputMoney.replace(/(^0+)/, '');
-    setMoney(parseInt(replaceMoney));
+    setMoney(Number(replaceMoney));
+  };
+
+  const handleIncreaseMoney = (increaseMoney: number) => {
+    setMoney(money + increaseMoney);
   };
 
   return (
@@ -50,7 +54,7 @@ function Charge() {
           onChange={handleMoneyChange}
         />
         <div className="my-4 mx-16">
-          <ChargeMoneyBtnList />
+          <ChargeMoneyBtnList onIncreaseMoney={handleIncreaseMoney} />
         </div>
         <CommonBtn {...chargeBtnClassName} onClick={chargeMoney}>
           충전

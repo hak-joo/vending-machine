@@ -48,14 +48,18 @@ const chargeMoneyList: chargeMoneyType[] = [
   },
 ];
 
-function ChargeMoneyBtnList() {
-  const handleBtnClick = () => {
-    console.log('금액 버튼 클릭');
-  };
+type ChargeMoneyBtnListType = {
+  onIncreaseMoney: (increaseMoney: number) => void;
+};
 
+function ChargeMoneyBtnList({ onIncreaseMoney }: ChargeMoneyBtnListType) {
   const moneyList = chargeMoneyList.map((moneyBtn, index) => {
     return (
-      <CommonBtn key={index} {...moneyBtn} onClick={handleBtnClick}>
+      <CommonBtn
+        key={index}
+        {...moneyBtn}
+        onClick={() => onIncreaseMoney(moneyBtn?.money)}
+      >
         +{moneyBtn?.money}
       </CommonBtn>
     );
