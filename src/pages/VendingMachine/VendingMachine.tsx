@@ -4,7 +4,7 @@ import BeverageAPI from '@/util/BeverageApi';
 import { useEffect, useState } from 'react';
 
 function VendingMachinePage() {
-  const [beverageList, setBeverageList] = useState<BeverageType[]>();
+  const [beverageList, setBeverageList] = useState<BeverageType[]>([]);
 
   const fetch = () => {
     const beverageList = BeverageAPI.fetchBeverageList();
@@ -19,12 +19,9 @@ function VendingMachinePage() {
     <div className="flex flex-col p-64">
       <div className="basis-1/3 bg-lime-300">
         <div className="grid grid-cols-6 gap-2 p-2 justify-items-center">
-          {beverageList &&
-            beverageList.map((beverage) => (
-              <div key={beverage.id}>
-                <Beverage beverage={beverage} />
-              </div>
-            ))}
+          {beverageList.map((beverage) => (
+            <Beverage beverage={beverage} />
+          ))}
         </div>
       </div>
 
