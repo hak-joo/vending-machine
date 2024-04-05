@@ -20,7 +20,7 @@ export const beverageList: Array<BeverageType> = [
     name: '환타',
     price: 1000,
     imagePath: 'src/assets/fanta.png',
-    stock: 100,
+    stock: 0,
   },
   {
     id: 4,
@@ -55,7 +55,7 @@ export const beverageList: Array<BeverageType> = [
     name: '스파클링 애플',
     price: 1300,
     imagePath: 'src/assets/sparkling-apple.png',
-    stock: 100,
+    stock: 0,
   },
   {
     id: 9,
@@ -76,7 +76,7 @@ export const beverageList: Array<BeverageType> = [
     name: '썬키스트',
     price: 1500,
     imagePath: 'src/assets/sunkist.png',
-    stock: 100,
+    stock: 0,
   },
   {
     id: 12,
