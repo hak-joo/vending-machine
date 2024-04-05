@@ -1,4 +1,4 @@
-import { beverageList } from '@/data/beverageList';
+import { beverageList } from '@/pages/VendingMachine/Beverage/datas';
 
 const fetchBeverageList = () => {
   return beverageList;
