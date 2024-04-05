@@ -13,6 +13,7 @@ function CommonBtn({
   textAlign,
   additionalClass,
   children,
+  disabled,
   ...props
 }: CommonBtnProps) {
   return (
@@ -25,6 +26,7 @@ function CommonBtn({
             shape,
             border,
             textAlign,
+            disabled,
           }),
           additionalClass,
         ),

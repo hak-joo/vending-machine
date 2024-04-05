@@ -10,12 +10,12 @@ interface RouteType {
 
 export const routes: RouteType[] = [
   {
-    title: 'charge',
+    title: '충전',
     path: '/charge',
     element: <Charge />,
   },
   {
-    title: 'vending-machine',
+    title: '자판기',
     path: '/',
     element: <VendingMachinePage />,
   },

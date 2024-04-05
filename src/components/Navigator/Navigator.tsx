@@ -14,12 +14,15 @@ function Navigator() {
     navigate(target);
   }
   return (
-    <nav className="flex flex-col fixed bottom-14 right-4 h-56 justify-around bg-gray-100 rounded-lg p-4">
+    <nav className="flex flex-col fixed bottom-14 right-4 h-48 justify-around bg-gray-100 rounded-2xl p-4 w-30">
       {routes.map((route) => {
-        const color = route.path === location.pathname ? 'blue' : 'gray';
+        const current = route.path === location.pathname;
+        const color = current ? 'blue' : 'gray';
+
         return (
           <CommonBtn
-            additionalClass="w-16 h-16"
+            disabled={current}
+            additionalClass="w-14 h-14"
             shape="circle"
             bgColor={color}
             textColor="white"
