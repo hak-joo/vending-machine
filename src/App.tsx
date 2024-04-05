@@ -1,15 +1,17 @@
 import { BrowserRouter } from 'react-router-dom';
-import Router from './Router';
+import Router from './router/Router';
 import Navigator from './components/Navigator/Navigator';
+import GlobalView from './GlobalView';
 
 function App() {
   return (
-    <>
-      <Navigator />
+    <GlobalView>
       <BrowserRouter>
+        <Navigator />
+
         <Router />
       </BrowserRouter>
-    </>
+    </GlobalView>
   );
 }
 

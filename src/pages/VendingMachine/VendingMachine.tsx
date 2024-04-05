@@ -16,7 +16,7 @@ function VendingMachinePage() {
   }, []);
 
   return (
-    <div className="flex flex-col p-64">
+    <div className="flex flex-col max-w-[1200px] min-w-[600px]">
       <div className="basis-1/3 bg-lime-300">
         <div className="grid grid-cols-6 gap-2 p-2 justify-items-center">
           {beverageList.map((beverage) => (
