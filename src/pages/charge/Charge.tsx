@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 import { useState } from 'react';
 import { useAtom } from 'jotai';
 import { userAtom } from '@/store/atoms';
