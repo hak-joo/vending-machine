@@ -2,6 +2,7 @@ import Beverage from '@/pages/VendingMachine/Beverage/Beverage';
 import { BeverageType } from './Beverage/types';
 import BeverageAPI from '@/util/BeverageApi';
 import { useEffect, useState } from 'react';
+import MoneyInput from './MoneyInput/MoneyInput';
 
 function VendingMachinePage() {
   const [beverageList, setBeverageList] = useState<BeverageType[]>([]);
@@ -26,7 +27,7 @@ function VendingMachinePage() {
       </div>
 
       <div className="basis-1/3">
-        <button>버튼</button>
+        <MoneyInput></MoneyInput>
       </div>
 
       <div className="basis-1/3">
