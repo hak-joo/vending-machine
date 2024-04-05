@@ -1,5 +1,5 @@
-import Beverage from '@/components/Beverage';
-import { BeverageType } from '@/types/BeverageType';
+import Beverage from '@/pages/VendingMachine/Beverage/Beverage';
+import { BeverageType } from './Beverage/types';
 import BeverageAPI from '@/util/BeverageApi';
 import { useEffect, useState } from 'react';
 

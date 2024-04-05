@@ -1,14 +1,14 @@
-import React, { ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 import { useState } from 'react';
 import { useAtom } from 'jotai';
 import { userAtom } from '@/store/atoms';
-import ChargeMoneyBtnList from '@/components/charge/ChargeMoneyBtnList';
-import CommonBtn from '@/components/button/CommonBtn';
-import { ButtonProps } from '@/types/Button';
+import ChargeMoneyBtnList from '@/pages/Charge/ChargeMoneyBtnList/ChargeMoneyBtnList';
+import CommonBtn from '@/components/CommanBtn/CommonBtn';
+import { CommandBtnType } from '@/components/CommanBtn/types';
 import '@/styles/charge/Charge.css';
 
 // 충전 버튼 className
-const chargeBtnClassName: ButtonProps = {
+const chargeBtnClassName: CommandBtnType = {
   textColor: 'white',
   textAlign: 'center',
   additionalClass: 'w-14 h-10 border-indigo-500/50 rounded-lg bg-indigo-500/50',
