@@ -7,7 +7,6 @@ import CommonBtn from '@/components/CommanBtn/CommonBtn';
 import { CommandBtnType } from '@/components/CommanBtn/types';
 import '@/styles/charge/Charge.css';
 
-// 충전 버튼 className
 const chargeBtnClassName: CommandBtnType = {
   textColor: 'white',
   textAlign: 'center',
