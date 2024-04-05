@@ -1,4 +1,4 @@
-import { BeverageType } from '@/types/BeverageType';
+import { BeverageType } from './types.ts';
 
 function Beverage({ beverage }: { beverage: BeverageType }): JSX.Element {
   return (
