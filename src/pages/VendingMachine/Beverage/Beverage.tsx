@@ -1,11 +1,27 @@
+import CommonBtn from '@/components/CommanBtn/CommonBtn.tsx';
 import { BeverageType } from './types.ts';
+import { NotAvailableLine } from '@/components/NotAvailableLine.tsx';
 
-function Beverage({ beverage }: { beverage: BeverageType }): JSX.Element {
+function Beverage({
+  beverage,
+  inputMoney,
+}: {
+  beverage: BeverageType;
+  inputMoney: number;
+}): JSX.Element {
   return (
     <div className="bg-white flex justify-center items-center flex-col">
-      <img src={beverage.imagePath} className="" />
-      <h2>{beverage.name}</h2>
-      <div>{beverage.price}원</div>
+      <div className="relative">
+        <img src={beverage.imagePath} className=""></img>
+        <h2>{beverage.name}</h2>
+        <div>{beverage.price}원</div>
+        {beverage.stock <= 0 ? <NotAvailableLine /> : null}
+      </div>
+      {inputMoney >= beverage.price && beverage.stock > 0 ? (
+        <CommonBtn bgColor="green"> 선택 </CommonBtn>
+      ) : (
+        <CommonBtn bgColor="red"> 선택불가 </CommonBtn>
+      )}
     </div>
   );
 }
