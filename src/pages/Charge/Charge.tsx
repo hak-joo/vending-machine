@@ -6,6 +6,7 @@ import ChargeMoneyBtnList from '@/pages/Charge/ChargeMoneyBtnList/ChargeMoneyBtn
 import CommonBtn from '@/components/CommanBtn/CommonBtn';
 import { CommandBtnType } from '@/components/CommanBtn/types';
 import '@/styles/charge/Charge.css';
+import { chargeMoneyList } from './ChargeMoneyBtnList/data';
 
 const chargeBtnClassName: CommandBtnType = {
   textColor: 'white',
@@ -53,7 +54,10 @@ function Charge() {
           onChange={handleMoneyChange}
         />
         <div className="my-4 mx-16">
-          <ChargeMoneyBtnList onIncreaseMoney={handleIncreaseMoney} />
+          <ChargeMoneyBtnList
+            checkUserMoney={false}
+            onIncreaseMoney={handleIncreaseMoney}
+          />
         </div>
         <CommonBtn {...chargeBtnClassName} onClick={chargeMoney}>
           충전

@@ -20,4 +20,5 @@ export interface CommandBtnType {
   shape?: ButtonShapes;
   textAlign?: ButtonTextAlign;
   additionalClass?: string;
+  disabled?: boolean;
 }

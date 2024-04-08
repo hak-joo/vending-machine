@@ -13,10 +13,12 @@ function CommonBtn({
   textAlign,
   additionalClass,
   children,
+  disabled,
   ...props
 }: CommonBtnProps) {
   return (
     <button
+      disabled={disabled}
       className={twMerge(
         clsx(
           ButtonVariants({
@@ -25,6 +27,7 @@ function CommonBtn({
             shape,
             border,
             textAlign,
+            disabled,
           }),
           additionalClass,
         ),
