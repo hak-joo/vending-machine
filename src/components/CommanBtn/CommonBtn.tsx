@@ -18,6 +18,7 @@ function CommonBtn({
 }: CommonBtnProps) {
   return (
     <button
+      disabled={disabled}
       className={twMerge(
         clsx(
           ButtonVariants({
