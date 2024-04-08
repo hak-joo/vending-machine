@@ -1,11 +1,18 @@
 import CommonBtn from '@/components/CommanBtn/CommonBtn.tsx';
-import { BeverageType } from './types.ts';
-import { NotAvailableLine } from '@/components/NotAvailableLine.tsx';
+import { NotAvailableLine } from '@/pages/VendingMachine/NotAvailableLine';
 import { useContext } from 'react';
-import { inputMoneyContext } from '@/context/InputMoneyContext.tsx';
+import { InsertedMoneyContext } from '@/context/InsertedMoneyContext.tsx';
+
+export interface BeverageType {
+  id: number;
+  name: string;
+  price: number;
+  imagePath: string;
+  stock: number;
+}
 
 function Beverage({ beverage }: { beverage: BeverageType }): JSX.Element {
-  const { inputMoney } = useContext(inputMoneyContext);
+  const { insertedMoney } = useContext(InsertedMoneyContext);
   return (
     <div className="bg-white flex justify-center items-center flex-col">
       <div className="relative">
@@ -14,7 +21,7 @@ function Beverage({ beverage }: { beverage: BeverageType }): JSX.Element {
         <div>{beverage.price}원</div>
         {beverage.stock <= 0 ? <NotAvailableLine /> : null}
       </div>
-      {inputMoney >= beverage.price && beverage.stock > 0 ? (
+      {insertedMoney >= beverage.price && beverage.stock > 0 ? (
         <CommonBtn bgColor="green"> 선택 </CommonBtn>
       ) : (
         <CommonBtn bgColor="red"> 선택불가 </CommonBtn>

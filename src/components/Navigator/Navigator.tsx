@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import CommonBtn from '../CommanBtn/CommonBtn';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { routes } from '@/router/routes';
@@ -6,9 +5,6 @@ import { routes } from '@/router/routes';
 function Navigator() {
   const location = useLocation();
   const navigate = useNavigate();
-  useEffect(() => {
-    console.log(location);
-  });
 
   function handleLink(target: string) {
     navigate(target);
@@ -21,6 +17,7 @@ function Navigator() {
 
         return (
           <CommonBtn
+            key={route.path}
             disabled={current}
             additionalClass="w-14 h-14"
             shape="circle"

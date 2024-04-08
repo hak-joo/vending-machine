@@ -1,17 +1,16 @@
 import Beverage from '@/pages/VendingMachine/Beverage/Beverage';
-import { BeverageType } from './Beverage/types';
+import { BeverageType } from '@/pages/VendingMachine/Beverage/Beverage';
 import BeverageAPI from '@/util/BeverageApi';
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useAtom } from 'jotai';
 import { userAtom } from '@/store/atoms';
-import { inputMoneyContext } from '@/context/InputMoneyContext';
-import MoneyInput from './MoneyInput/MoneyInput';
+import { InsertedMoneyContext } from '@/context/InsertedMoneyContext';
+import MoneySlotArea from './MoneySlotArea/MoneySlotArea';
 
-function VendingMachinePage() {
+function VendingMachine() {
   const [beverageList, setBeverageList] = useState<BeverageType[]>([]);
-  const { inputMoney, increaseInputMoney, resetInputMoney } =
-    useContext(inputMoneyContext);
-  // const { inputMoeny } = useContext(inputMoneyContext);
+  const { insertedMoney, increaseInsertedMoney, resetInsertedMoney } =
+    useContext(InsertedMoneyContext);
   const [user, setUser] = useAtom(userAtom);
 
   const fetch = () => {
@@ -26,13 +25,13 @@ function VendingMachinePage() {
   const handleRefundMoney = () => {
     setUser({
       ...user,
-      money: user.money + inputMoney,
+      money: user.money + insertedMoney,
     });
-    resetInputMoney();
+    resetInsertedMoney();
   };
 
   const handleIncreaseMoney = (money: number) => {
-    increaseInputMoney(money);
+    increaseInsertedMoney(money);
     setUser({
       ...user,
       money: user.money - money,
@@ -50,11 +49,11 @@ function VendingMachinePage() {
       </div>
       <div className="w-full h-1 bg-black"></div>
       <div className="basis-1/3">
-        <MoneyInput
-          inputMoney={inputMoney}
+        <MoneySlotArea
+          insertedMoney={insertedMoney}
           onRefundMoney={handleRefundMoney}
           onIncreaseMoney={handleIncreaseMoney}
-        ></MoneyInput>
+        />
       </div>
       현재 보유한 금액 : {user.money}
       <div className="basis-1/3">
@@ -64,4 +63,4 @@ function VendingMachinePage() {
   );
 }
 
-export default VendingMachinePage;
+export default VendingMachine;

@@ -1,13 +1,11 @@
-import { Route, Routes, RouteObject } from 'react-router-dom';
-import Charge from '@/pages/Charge/Charge';
-import VendingMachinePage from '@/pages/VendingMachine/VendingMachine';
+import { Route, Routes } from 'react-router-dom';
 import { routes } from './routes';
 
 function Router() {
   return (
     <Routes>
       {routes.map((route) => (
-        <Route path={route.path} element={route.element} />
+        <Route key={route.path} path={route.path} element={route.element} />
       ))}
     </Routes>
   );

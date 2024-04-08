@@ -3,15 +3,12 @@ import { useAtom } from 'jotai';
 import { userAtom } from '@/store/atoms';
 import { chargeMoneyList } from './data.ts';
 
-type ChargeMoneyBtnListType = {
+interface MoneyBtnListType {
   checkUserMoney: boolean;
   onIncreaseMoney: (increaseMoney: number) => void;
-};
+}
 
-function ChargeMoneyBtnList({
-  checkUserMoney,
-  onIncreaseMoney,
-}: ChargeMoneyBtnListType) {
+function MoneyBtnList({ checkUserMoney, onIncreaseMoney }: MoneyBtnListType) {
   const [user, setUser] = useAtom(userAtom);
   const moneyList = chargeMoneyList.map((moneyBtn, index) => {
     const disabled = user.money < moneyBtn.money;
@@ -39,7 +36,7 @@ function ChargeMoneyBtnList({
     );
   });
 
-  return <div>{moneyList}</div>;
+  return <>{moneyList}</>;
 }
 
-export default ChargeMoneyBtnList;
+export default MoneyBtnList;

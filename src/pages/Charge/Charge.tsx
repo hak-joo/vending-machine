@@ -2,17 +2,10 @@ import { ChangeEvent } from 'react';
 import { useState } from 'react';
 import { useAtom } from 'jotai';
 import { userAtom } from '@/store/atoms';
-import ChargeMoneyBtnList from '@/pages/Charge/ChargeMoneyBtnList/ChargeMoneyBtnList';
+import MoneyBtnList from '@/components/MoneyBtnList/MoneyBtnList';
 import CommonBtn from '@/components/CommanBtn/CommonBtn';
-import { CommandBtnType } from '@/components/CommanBtn/types';
 import '@/styles/charge/Charge.css';
-import { chargeMoneyList } from './ChargeMoneyBtnList/data';
-
-const chargeBtnClassName: CommandBtnType = {
-  textColor: 'white',
-  textAlign: 'center',
-  additionalClass: 'w-14 h-10 border-indigo-500/50 rounded-lg bg-indigo-500/50',
-};
+import { chargeBtnClassName } from './datas';
 
 function Charge() {
   const [user, setUser] = useAtom(userAtom);
@@ -54,7 +47,7 @@ function Charge() {
           onChange={handleMoneyChange}
         />
         <div className="my-4 mx-16">
-          <ChargeMoneyBtnList
+          <MoneyBtnList
             checkUserMoney={false}
             onIncreaseMoney={handleIncreaseMoney}
           />
