@@ -1,26 +1,38 @@
 import Beverage from '@/pages/VendingMachine/Beverage/Beverage';
 import { BeverageType } from './Beverage/types';
 import BeverageAPI from '@/util/BeverageApi';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import ChargeMoneyBtnList from '../Charge/ChargeMoneyBtnList/ChargeMoneyBtnList';
-import { InputMoney, useInputMoney } from '@/context/InputMoneyContext';
+import {
+  InputMoney,
+  // InputMoney,
+  inputMoneyContext,
+  useInputMoney,
+} from '@/context/InputMoneyContext';
 
 function VendingMachinePage() {
   const [beverageList, setBeverageList] = useState<BeverageType[]>([]);
-  const { inputMoney, handleClick } = useInputMoney();
+  // const { inputMoney, handleClick } = useInputMoney();
+  // const [inputMoney, setInputMoney] = useState(0);
+  const { inputMoney, increaseMoney } = useContext(inputMoneyContext);
 
   const fetch = () => {
     const beverageList = BeverageAPI.fetchBeverageList();
     setBeverageList(beverageList);
   };
 
+  // const increaseMoney = (money: number): void => {
+  //   console.log(money);
+  //   setInputMoney(inputMoney + money);
+  // };
+
+  const handleClick = (money: number) => {
+    increaseMoney(money);
+  };
+
   useEffect(() => {
     fetch();
   }, []);
-
-  const handleIncreaseMoney = (money: number) => {
-    handleClick(money);
-  };
 
   return (
     <InputMoney>
@@ -31,7 +43,7 @@ function VendingMachinePage() {
               <Beverage
                 key={beverage.id}
                 beverage={beverage}
-                inputMoney={inputMoney}
+                // inputMoney={inputMoney}
               />
             ))}
           </div>
@@ -46,7 +58,7 @@ function VendingMachinePage() {
               </div>
             </div>
             <div className="flex flex-row p-2 justify-end">
-              <ChargeMoneyBtnList onIncreaseMoney={handleIncreaseMoney} />
+              <ChargeMoneyBtnList onIncreaseMoney={increaseMoney} />
             </div>
           </div>
         </div>

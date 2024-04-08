@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export interface InputMoneyContextType {
   inputMoney: number;
@@ -19,17 +19,29 @@ export const useInputMoney = () => {
   };
 };
 
-export const inputMoneyContext = React.createContext<InputMoneyContextType>({
+export const inputMoneyContext = React.createContext({
   inputMoney: 0,
-  setInputMoney: () => {},
+  increaseMoney: (money: number) => {
+    console.log(money);
+  },
 });
 
-export const InputMoney = ({ children }: { children: React.ReactNode }) => {
-  const { inputMoney, setInputMoney } =
-    React.useContext<InputMoneyContextType>(inputMoneyContext);
+export const InputMoney = ({
+  children,
+}: {
+  children: React.ReactNode;
+}): JSX.Element => {
+  const [inputMoney, setInputMoney] = useState(0);
+
+  const handleClick = (money: number): void => {
+    console.log(money);
+    setInputMoney(inputMoney + money);
+  };
 
   return (
-    <inputMoneyContext.Provider value={{ inputMoney, setInputMoney }}>
+    <inputMoneyContext.Provider
+      value={{ inputMoney, increaseMoney: handleClick }}
+    >
       {children}
     </inputMoneyContext.Provider>
   );

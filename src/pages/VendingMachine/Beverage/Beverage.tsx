@@ -1,14 +1,17 @@
 import CommonBtn from '@/components/CommanBtn/CommonBtn.tsx';
 import { BeverageType } from './types.ts';
 import { NotAvailableLine } from '@/components/NotAvailableLine.tsx';
+import { useContext } from 'react';
+import { inputMoneyContext } from '@/context/InputMoneyContext.tsx';
 
 function Beverage({
   beverage,
-  inputMoney,
+  // inputMoney,
 }: {
   beverage: BeverageType;
-  inputMoney: number;
+  // inputMoney: number;
 }): JSX.Element {
+  const { inputMoney } = useContext(inputMoneyContext);
   return (
     <div className="bg-white flex justify-center items-center flex-col">
       <div className="relative">
@@ -17,6 +20,7 @@ function Beverage({
         <div>{beverage.price}원</div>
         {beverage.stock <= 0 ? <NotAvailableLine /> : null}
       </div>
+      {inputMoney}
       {inputMoney >= beverage.price && beverage.stock > 0 ? (
         <CommonBtn bgColor="green"> 선택 </CommonBtn>
       ) : (
