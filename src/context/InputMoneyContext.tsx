@@ -5,25 +5,9 @@ export interface InputMoneyContextType {
   setInputMoney: (money: number) => void;
 }
 
-export const useInputMoney = () => {
-  const [inputMoney, setInputMoney] = React.useState<number>(0);
-
-  const handleClick = (money: number) => {
-    setInputMoney(inputMoney + money);
-    console.log(inputMoney);
-  };
-
-  return {
-    inputMoney,
-    handleClick,
-  };
-};
-
 export const inputMoneyContext = React.createContext({
   inputMoney: 0,
-  increaseMoney: (money: number) => {
-    console.log(money);
-  },
+  increaseMoney: (money: number) => {},
 });
 
 export const InputMoney = ({
@@ -33,15 +17,12 @@ export const InputMoney = ({
 }): JSX.Element => {
   const [inputMoney, setInputMoney] = useState(0);
 
-  const handleClick = (money: number): void => {
-    console.log(money);
+  const increaseMoney = (money: number): void => {
     setInputMoney(inputMoney + money);
   };
 
   return (
-    <inputMoneyContext.Provider
-      value={{ inputMoney, increaseMoney: handleClick }}
-    >
+    <inputMoneyContext.Provider value={{ inputMoney, increaseMoney }}>
       {children}
     </inputMoneyContext.Provider>
   );

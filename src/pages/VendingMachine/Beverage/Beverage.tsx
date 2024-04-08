@@ -4,13 +4,7 @@ import { NotAvailableLine } from '@/components/NotAvailableLine.tsx';
 import { useContext } from 'react';
 import { inputMoneyContext } from '@/context/InputMoneyContext.tsx';
 
-function Beverage({
-  beverage,
-  // inputMoney,
-}: {
-  beverage: BeverageType;
-  // inputMoney: number;
-}): JSX.Element {
+function Beverage({ beverage }: { beverage: BeverageType }): JSX.Element {
   const { inputMoney } = useContext(inputMoneyContext);
   return (
     <div className="bg-white flex justify-center items-center flex-col">
