@@ -22,6 +22,14 @@ function VendingMachinePage() {
     fetch();
   }, []);
 
+  const handleRefundMoney = () => {
+    setUser({
+      ...user,
+      money: user.money + inputMoney,
+    });
+    setInputMoney(0);
+  };
+
   const handleIncreaseMoney = (money: number) => {
     const expectedMoney = inputMoney + money;
     setInputMoney(expectedMoney);
@@ -48,6 +56,7 @@ function VendingMachinePage() {
       <div className="basis-1/3">
         <MoneyInput
           inputMoney={inputMoney}
+          onRefundMoney={handleRefundMoney}
           onIncreaseMoney={handleIncreaseMoney}
         ></MoneyInput>
       </div>

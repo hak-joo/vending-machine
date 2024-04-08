@@ -1,11 +1,17 @@
+import CommonBtn from '@/components/CommanBtn/CommonBtn';
 import ChargeMoneyBtnList from '@/pages/Charge/ChargeMoneyBtnList/ChargeMoneyBtnList';
 
 type MoneyInputType = {
   inputMoney: number;
+  onRefundMoney: () => void;
   onIncreaseMoney: (money: number) => void;
 };
 
-function MoneyInput({ inputMoney, onIncreaseMoney }: MoneyInputType) {
+function MoneyInput({
+  inputMoney,
+  onRefundMoney,
+  onIncreaseMoney,
+}: MoneyInputType) {
   return (
     <div className="flex flex-col bg-lime-300 p-2">
       <div className="">
@@ -13,7 +19,14 @@ function MoneyInput({ inputMoney, onIncreaseMoney }: MoneyInputType) {
           넣은 돈: {inputMoney}
         </div>
       </div>
-      <div className="flex flex-row p-2 justify-end">
+      <div className="flex flex-row p-2 justify-between">
+        <CommonBtn
+          bgColor="purple"
+          additionalClass="w-20 h-14 mr-36"
+          onClick={onRefundMoney}
+        >
+          잔돈 반환
+        </CommonBtn>
         <ChargeMoneyBtnList
           checkUserMoney={true}
           onIncreaseMoney={onIncreaseMoney}
