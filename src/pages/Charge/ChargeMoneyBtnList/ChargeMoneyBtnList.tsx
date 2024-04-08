@@ -30,7 +30,9 @@ function ChargeMoneyBtnList({
       <CommonBtn
         key={index}
         {...moneyBtn}
-        onClick={() => onIncreaseMoney(moneyBtn?.money)}
+        onClick={() => {
+          onIncreaseMoney(moneyBtn?.money);
+        }}
       >
         {'+' + moneyBtn.money}
       </CommonBtn>

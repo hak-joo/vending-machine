@@ -1,12 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-export const inputMoneyContext = React.createContext({});
+export interface InputMoneyContextType {
+  inputMoney: number;
+  setInputMoney: (money: number) => void;
+  resetInputMoney: () => void;
+}
 
-export const InputMoney = ({ children }: { children: React.ReactNode }) => {
-  const [inputMoney, setInputMoney] = React.useState<number>(0);
+export const inputMoneyContext = React.createContext({
+  inputMoney: 0,
+  increaseInputMoney: (money: number) => {},
+  resetInputMoney: () => {},
+});
+
+export const InputMoney = ({
+  children,
+}: {
+  children: React.ReactNode;
+}): JSX.Element => {
+  const [inputMoney, setInputMoney] = useState(0);
+
+  const increaseInputMoney = (money: number): void => {
+    setInputMoney(inputMoney + money);
+  };
+  const resetInputMoney = () => {
+    setInputMoney(0);
+  };
 
   return (
-    <inputMoneyContext.Provider value={{ inputMoney, setInputMoney }}>
+    <inputMoneyContext.Provider
+      value={{ inputMoney, increaseInputMoney, resetInputMoney }}
+    >
       {children}
     </inputMoneyContext.Provider>
   );

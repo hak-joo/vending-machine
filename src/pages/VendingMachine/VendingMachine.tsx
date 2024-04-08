@@ -9,7 +9,8 @@ import MoneyInput from './MoneyInput/MoneyInput';
 
 function VendingMachinePage() {
   const [beverageList, setBeverageList] = useState<BeverageType[]>([]);
-  const [inputMoney, setInputMoney] = useState<number>(0);
+  const { inputMoney, increaseInputMoney, resetInputMoney } =
+    useContext(inputMoneyContext);
   // const { inputMoeny } = useContext(inputMoneyContext);
   const [user, setUser] = useAtom(userAtom);
 
@@ -27,12 +28,11 @@ function VendingMachinePage() {
       ...user,
       money: user.money + inputMoney,
     });
-    setInputMoney(0);
+    resetInputMoney();
   };
 
   const handleIncreaseMoney = (money: number) => {
-    const expectedMoney = inputMoney + money;
-    setInputMoney(expectedMoney);
+    increaseInputMoney(money);
     setUser({
       ...user,
       money: user.money - money,
@@ -44,11 +44,7 @@ function VendingMachinePage() {
       <div className="basis-1/3 bg-lime-300">
         <div className="grid grid-cols-6 gap-2 p-2 justify-items-center">
           {beverageList.map((beverage) => (
-            <Beverage
-              key={beverage.id}
-              beverage={beverage}
-              inputMoney={inputMoney}
-            />
+            <Beverage key={beverage.id} beverage={beverage} />
           ))}
         </div>
       </div>
