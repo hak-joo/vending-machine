@@ -14,7 +14,6 @@ function Beverage({ beverage }: { beverage: BeverageType }): JSX.Element {
         <div>{beverage.price}원</div>
         {beverage.stock <= 0 ? <NotAvailableLine /> : null}
       </div>
-      {inputMoney}
       {inputMoney >= beverage.price && beverage.stock > 0 ? (
         <CommonBtn bgColor="green"> 선택 </CommonBtn>
       ) : (
