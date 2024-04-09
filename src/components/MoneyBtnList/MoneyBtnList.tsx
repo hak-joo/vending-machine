@@ -9,34 +9,29 @@ interface MoneyBtnListType {
 }
 
 function MoneyBtnList({ checkUserMoney, onIncreaseMoney }: MoneyBtnListType) {
-  const [user, setUser] = useAtom(userAtom);
+  const [user] = useAtom(userAtom);
+
   const moneyList = chargeMoneyList.map((moneyBtn, index) => {
     const disabled = user.money < moneyBtn.money;
-    return checkUserMoney ? (
+
+    const isEnoughUserMoney = checkUserMoney && disabled;
+    const buttonLabel = isEnoughUserMoney ? 'X' : '+' + moneyBtn.money;
+
+    return (
       <CommonBtn
         key={index}
         {...moneyBtn}
-        bgColor={disabled ? 'red' : moneyBtn.bgColor}
-        border={disabled ? 'red' : moneyBtn.border}
         onClick={() => onIncreaseMoney(moneyBtn?.money)}
-        disabled={disabled}
+        bgColor={isEnoughUserMoney ? 'red' : moneyBtn.bgColor}
+        border={isEnoughUserMoney ? 'red' : moneyBtn.border}
+        disabled={isEnoughUserMoney}
       >
-        {disabled ? 'X' : moneyBtn.money}
-      </CommonBtn>
-    ) : (
-      <CommonBtn
-        key={index}
-        {...moneyBtn}
-        onClick={() => {
-          onIncreaseMoney(moneyBtn?.money);
-        }}
-      >
-        {'+' + moneyBtn.money}
+        {buttonLabel}
       </CommonBtn>
     );
   });
 
-  return <>{moneyList}</>;
+  return moneyList;
 }
 
 export default MoneyBtnList;
