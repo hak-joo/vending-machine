@@ -1,7 +1,6 @@
 import React from 'react';
 import Charge from '@/pages/Charge/Charge';
 import VendingMachine from '@/pages/VendingMachine/VendingMachine';
-import { InsertedMoneyProvider } from '@/context/InsertedMoneyContext';
 
 interface RouteType {
   title: string;
@@ -18,10 +17,6 @@ export const routes: RouteType[] = [
   {
     title: '자판기',
     path: '/',
-    element: (
-      <InsertedMoneyProvider>
-        <VendingMachine />
-      </InsertedMoneyProvider>
-    ),
+    element: <VendingMachine />,
   },
 ];

@@ -1,16 +1,14 @@
 import Beverage from '@/pages/VendingMachine/Beverage/Beverage';
 import { BeverageType } from '@/pages/VendingMachine/Beverage/Beverage';
 import BeverageAPI from '@/util/BeverageApi';
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useAtom } from 'jotai';
-import { userAtom } from '@/store/atoms';
-import { InsertedMoneyContext } from '@/context/InsertedMoneyContext';
+import { insertedMoneyAtom, userAtom } from '@/store/atoms';
 import MoneySlotArea from './MoneySlotArea/MoneySlotArea';
 
 function VendingMachine() {
   const [beverageList, setBeverageList] = useState<BeverageType[]>([]);
-  const { insertedMoney, increaseInsertedMoney, resetInsertedMoney } =
-    useContext(InsertedMoneyContext);
+  const [insertedMoney, setInsertedMoney] = useAtom(insertedMoneyAtom);
   const [user, setUser] = useAtom(userAtom);
 
   const fetch = () => {
@@ -27,11 +25,11 @@ function VendingMachine() {
       ...user,
       money: user.money + insertedMoney,
     });
-    resetInsertedMoney();
+    setInsertedMoney(0);
   };
 
   const handleIncreaseMoney = (money: number) => {
-    increaseInsertedMoney(money);
+    setInsertedMoney(insertedMoney + money);
     setUser({
       ...user,
       money: user.money - money,
