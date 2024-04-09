@@ -14,18 +14,20 @@ export interface BeverageType {
 function Beverage({ beverage }: { beverage: BeverageType }): JSX.Element {
   const { insertedMoney } = useContext(InsertedMoneyContext);
   return (
-    <div className="bg-white flex justify-center items-center flex-col">
-      <div className="relative">
+    <div className="flex justify-center items-center flex-col my-4">
+      <div className="relative flex justify-center items-center flex-col">
         <img src={beverage.imagePath} className=""></img>
         <h2>{beverage.name}</h2>
-        <div>{beverage.price}원</div>
         {beverage.stock <= 0 ? <NotAvailableLine /> : null}
       </div>
-      {insertedMoney >= beverage.price && beverage.stock > 0 ? (
-        <CommonBtn bgColor="green"> 선택 </CommonBtn>
-      ) : (
-        <CommonBtn bgColor="red"> 선택불가 </CommonBtn>
-      )}
+      <CommonBtn bgColor="black" additionalClass="rounded-full text-white">
+        {insertedMoney >= beverage.price && beverage.stock > 0 ? (
+          <div className="inline-block w-4 h-4 rounded-full border-green-500 bg-green-500 mr-2" />
+        ) : (
+          <div className="inline-block w-4 h-4 rounded-full border-red-500 bg-red-500 mr-2" />
+        )}
+        {beverage.price}원
+      </CommonBtn>
     </div>
   );
 }

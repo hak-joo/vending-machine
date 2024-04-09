@@ -40,7 +40,7 @@ function VendingMachine() {
 
   return (
     <div className="flex flex-col w-[700px] max-w-[1200px] min-w-[600px] h-full py-5 px-3 bg-green-700 rounded-lg">
-      <div className="basis-1/3 bg-lime-300">
+      <div className="basis-1/3 bg-beige rounded-lg">
         <div className="grid grid-cols-6 gap-2 p-2 justify-items-center">
           {beverageList.map((beverage) => (
             <Beverage key={beverage.id} beverage={beverage} />
