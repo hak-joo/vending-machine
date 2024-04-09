@@ -4,7 +4,13 @@
 export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        beige: '#fdf6da',
+      },
+    },
   },
   plugins: [],
 };

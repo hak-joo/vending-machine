@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'DakiM';
+  src: url('./font/DakiM.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@layer base {
+  html {
+    font-family: 'DakiM', 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1d1d1f;
+  }
+}
