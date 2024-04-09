@@ -1,7 +1,7 @@
 import CommonBtn from '@/components/CommanBtn/CommonBtn.tsx';
 import { NotAvailableLine } from '@/pages/VendingMachine/NotAvailableLine';
-import { useContext } from 'react';
-import { InsertedMoneyContext } from '@/context/InsertedMoneyContext.tsx';
+import { atom, useAtom } from 'jotai';
+import { insertedMoneyAtom } from '@/store/atoms';
 
 export interface BeverageType {
   id: number;
@@ -12,7 +12,9 @@ export interface BeverageType {
 }
 
 function Beverage({ beverage }: { beverage: BeverageType }): JSX.Element {
-  const { insertedMoney } = useContext(InsertedMoneyContext);
+  const insertedMoneyReadOnlyAtom = atom((get) => get(insertedMoneyAtom));
+  const insertedMoney = useAtom(insertedMoneyReadOnlyAtom)[0];
+
   return (
     <div className="bg-white flex justify-center items-center flex-col">
       <div className="relative">
