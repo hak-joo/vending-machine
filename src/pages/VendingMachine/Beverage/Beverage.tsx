@@ -1,7 +1,7 @@
 import CommonBtn from '@/components/CommanBtn/CommonBtn.tsx';
 import { NotAvailableLine } from '@/pages/VendingMachine/NotAvailableLine';
-import { atom, useAtom } from 'jotai';
-import { insertedMoneyAtom } from '@/store/atoms';
+import { useAtom } from 'jotai';
+import { insertedMoneyReadOnlyAtom } from '@/store/atoms';
 
 export interface BeverageType {
   id: number;
@@ -12,8 +12,7 @@ export interface BeverageType {
 }
 
 function Beverage({ beverage }: { beverage: BeverageType }): JSX.Element {
-  const insertedMoneyReadOnlyAtom = atom((get) => get(insertedMoneyAtom));
-  const insertedMoney = useAtom(insertedMoneyReadOnlyAtom)[0];
+  const [insertedMoney] = useAtom(insertedMoneyReadOnlyAtom);
 
   return (
     <div className="flex justify-center items-center flex-col my-4">
