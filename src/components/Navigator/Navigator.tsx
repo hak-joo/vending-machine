@@ -12,7 +12,7 @@ function Navigator() {
   return (
     <nav className="flex flex-col fixed bottom-14 right-4 h-48 justify-around bg-gray-100 rounded-2xl p-4 w-30">
       {routes.map((route) => {
-        const current = route.path === location.pathname;
+        const current = '/' + route.path === location.pathname;
         const color = current ? 'blue' : 'gray';
 
         return (

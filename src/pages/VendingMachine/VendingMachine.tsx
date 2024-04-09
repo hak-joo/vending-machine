@@ -6,8 +6,14 @@ import { useAtom } from 'jotai';
 import { userAtom } from '@/store/atoms';
 import { InsertedMoneyContext } from '@/context/InsertedMoneyContext';
 import MoneySlotArea from './MoneySlotArea/MoneySlotArea';
+import { useBlocker } from 'react-router-dom';
 
 function VendingMachine() {
+  useEffect(() => {
+    fetch();
+    return () => {};
+  }, []);
+
   const [beverageList, setBeverageList] = useState<BeverageType[]>([]);
   const { insertedMoney, increaseInsertedMoney, resetInsertedMoney } =
     useContext(InsertedMoneyContext);
@@ -17,10 +23,6 @@ function VendingMachine() {
     const beverageList = BeverageAPI.fetchBeverageList();
     setBeverageList(beverageList);
   };
-
-  useEffect(() => {
-    fetch();
-  }, []);
 
   const handleRefundMoney = () => {
     setUser({

@@ -1,6 +1,12 @@
 import ReactDOM from 'react-dom/client';
+import React from 'react';
 
-import App from './App.tsx';
 import './styles/global.css';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<App />);
+import Router from './router/Router.tsx';
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <Router />
+  </React.StrictMode>,
+);

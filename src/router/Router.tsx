@@ -1,14 +1,16 @@
-import { Route, Routes } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { routes } from './routes';
+import App from '@/App';
 
 function Router() {
-  return (
-    <Routes>
-      {routes.map((route) => (
-        <Route key={route.path} path={route.path} element={route.element} />
-      ))}
-    </Routes>
-  );
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <App />,
+      children: routes,
+    },
+  ]);
+  return <RouterProvider router={router} />;
 }
 
 export default Router;
