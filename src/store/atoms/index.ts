@@ -8,3 +8,4 @@ export const userAtom = atomWithStorage<User>('vendingmachine-user', {
 });
 
 export const insertedMoneyAtom = atom(0);
+export const insertedMoneyReadOnlyAtom = atom((get) => get(insertedMoneyAtom));
