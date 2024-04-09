@@ -35,8 +35,8 @@ function Charge() {
   };
 
   return (
-    <div className="w-full h-screen flex flex-col justify-center items-center">
-      <div className="w-1/3 h-1/4 flex flex-col items-center border border-indigo-500/50 rounded-lg">
+    <div className="w-[1200px] max-w-[1500px] min-w-[1000px] h-full flex flex-col justify-center items-center">
+      <div className="w-1/2 h-1/4 flex flex-col items-center border border-indigo-500/50 rounded-lg">
         <p className="text-lg text-cyan-600 mt-10 mb-2">사용자 금액 충전</p>
         <input
           type="number"
