@@ -7,13 +7,15 @@ export const ButtonVariants = cva(
       bgColor: {
         blue: 'bg-blue-600 hover:bg-blue-500',
         red: 'bg-red-600 hover:bg-red-500',
-        gray: 'bg-gray-600 hover:bg-gray-500',
+        gray: 'bg-gray-500 hover:bg-gray-500',
         purple: 'bg-purple-600 hover:bg-purple-500',
         orange: 'bg-orange-600 hover:bg-orange-500',
         yellow: 'bg-yellow-600 hover:bg-yellow-500',
         green: 'bg-green-600 hover:bg-green-500',
         black: 'bg-black hover:bg-gray-900',
         white: 'bg-white',
+        lightBlue: 'bg-lightBlue',
+        lightOrenge: 'bg-lightOrenge',
       },
       textColor: {
         blue: 'text-blue-600 hover:text-blue-500',
@@ -25,6 +27,8 @@ export const ButtonVariants = cva(
         green: 'text-green-600 hover:text-green-500',
         black: 'text-black',
         white: 'text-white',
+        lightBlue: 'bg-lightBlue',
+        lightOrenge: 'bg-lightOrenge',
       },
       shape: {
         rectangle: 'rounded-sm',
@@ -40,6 +44,8 @@ export const ButtonVariants = cva(
         green: 'border-2 border-green-500',
         black: 'border-2 border-black',
         white: 'border-2 border-white',
+        lightBlue: 'bg-lightBlue',
+        lightOrenge: 'bg-lightOrenge',
       },
       textAlign: {
         center: 'text-center',

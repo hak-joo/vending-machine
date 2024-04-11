@@ -9,7 +9,9 @@ export type Colors =
   | 'yellow'
   | 'green'
   | 'black'
-  | 'white';
+  | 'white'
+  | 'lightBlue'
+  | 'lightOrenge';
 
 export type ButtonTextAlign = 'center' | 'right' | 'left';
 
