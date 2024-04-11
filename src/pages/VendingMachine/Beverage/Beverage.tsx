@@ -11,7 +11,15 @@ export interface BeverageType {
   stock: number;
 }
 
-function Beverage({ beverage }: { beverage: BeverageType }): JSX.Element {
+interface BeveragePropType {
+  beverage: BeverageType;
+  onSelectBeverage: (beverage: BeverageType) => void;
+}
+
+function Beverage({
+  beverage,
+  onSelectBeverage,
+}: BeveragePropType): JSX.Element {
   const [insertedMoney] = useAtom(insertedMoneyReadOnlyAtom);
 
   return (
@@ -21,7 +29,11 @@ function Beverage({ beverage }: { beverage: BeverageType }): JSX.Element {
         <h2>{beverage.name}</h2>
         {beverage.stock <= 0 ? <NotAvailableLine /> : null}
       </div>
-      <CommonBtn bgColor="black" additionalClass="rounded-full text-white">
+      <CommonBtn
+        bgColor="black"
+        additionalClass="rounded-full text-white"
+        onClick={() => onSelectBeverage(beverage)}
+      >
         {insertedMoney >= beverage.price && beverage.stock > 0 ? (
           <div className="inline-block w-4 h-4 rounded-full border-green-500 bg-green-500 mr-2" />
         ) : (
