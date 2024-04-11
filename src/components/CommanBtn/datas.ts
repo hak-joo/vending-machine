@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority';
 
 export const ButtonVariants = cva(
-  `text-center p-1 font-bold w-full h-full ease-in duration-100`,
+  `text-center p-1 font-bold w-full h-full ease-in duration-100 flex items-center justify-center`,
   {
     variants: {
       bgColor: {
@@ -42,9 +42,9 @@ export const ButtonVariants = cva(
         white: 'border-2 border-white',
       },
       textAlign: {
-        center: 'text-center',
-        right: 'text-right',
-        left: 'text-left',
+        center: 'justify-center',
+        right: 'justify-end',
+        left: 'justify-start',
       },
       disabled: {
         true: 'cursor-not-allowed',

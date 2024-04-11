@@ -38,10 +38,11 @@ function VendingMachine() {
 
   return (
     <div className="flex flex-col w-[700px] max-w-[1200px] min-w-[600px] h-full py-5 px-3 bg-green-700 rounded-lg">
-      <div className="basis-1/3 bg-beige rounded-lg">
-        <div className="grid grid-cols-6 gap-2 p-2 justify-items-center">
+      <div className="w-11/12 h-2 self-center shadow-[0px_14px_8px_rgba(255,255,255,1)] z-10 rounded-lg" />
+      <div className="basis-1/3 bg-gray-200 rounded-lg">
+        <div className="grid grid-cols-6 px-3">
           {beverageList.map((beverage) => (
-            <Beverage key={beverage.id} beverage={beverage} />
+            <Beverage key={beverage.id} {...beverage} />
           ))}
         </div>
       </div>
