@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority';
 
 export const ButtonVariants = cva(
-  `text-center p-1 font-bold w-full h-full ease-in duration-100`,
+  `text-center mb-3 font-bold w-full h-full ease-in duration-100`,
   {
     variants: {
       bgColor: {
@@ -27,8 +27,8 @@ export const ButtonVariants = cva(
         green: 'text-green-600 hover:text-green-500',
         black: 'text-black',
         white: 'text-white',
-        lightBlue: 'bg-lightBlue',
-        lightOrenge: 'bg-lightOrenge',
+        lightBlue: 'text-lightBlue',
+        lightOrenge: 'text-lightOrenge',
       },
       shape: {
         rectangle: 'rounded-sm',
@@ -44,8 +44,8 @@ export const ButtonVariants = cva(
         green: 'border-2 border-green-500',
         black: 'border-2 border-black',
         white: 'border-2 border-white',
-        lightBlue: 'bg-lightBlue',
-        lightOrenge: 'bg-lightOrenge',
+        lightBlue: 'border-2 border-lightBlue',
+        lightOrenge: 'border-2 border-lightOrenge',
       },
       textAlign: {
         center: 'text-center',

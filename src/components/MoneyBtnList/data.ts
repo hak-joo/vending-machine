@@ -5,38 +5,40 @@ import type { ChargeMoneyType } from './types.ts';
 export const chargeMoneyList: ChargeMoneyType[] = [
   {
     money: 100,
-    bgColor: 'gray',
+    imgUrl: 'src/assets/money100.png',
     textColor: 'white',
     shape: 'circle',
-    border: 'gray',
     textAlign: 'center',
-    additionalClass: 'w-12 h-12 mt-1 mr-5 border-gray-700',
+    additionalClass:
+      "w-14 h-14 mt-1 mr-5 bg-[url('./src/assets/money100.png')] bg-cover",
   },
   {
     money: 500,
-    bgColor: 'gray',
+    imgUrl: 'src/assets/money500.png',
     textColor: 'white',
     shape: 'circle',
-    border: 'gray',
     textAlign: 'center',
-    additionalClass: 'w-14 h-14 mr-5 border-gray-700',
+    additionalClass:
+      "w-16 h-16 mr-5 bg-[url('./src/assets/money500.png')] bg-cover",
   },
   {
     money: 1000,
+    imgUrl: 'src/assets/money1000.png',
     bgColor: 'lightBlue',
     textColor: 'white',
     shape: 'rectangle',
     border: 'lightBlue',
     textAlign: 'right',
-    additionalClass: 'w-20 h-14 mr-5 rounded-md',
+    additionalClass: 'w-28 h-12 mr-5 rounded-md px-3',
   },
   {
     money: 5000,
+    imgUrl: 'src/assets/money5000.png',
     bgColor: 'lightOrenge',
     textColor: 'white',
     shape: 'rectangle',
     border: 'lightOrenge',
     textAlign: 'right',
-    additionalClass: 'w-20 h-14 mr-5 rounded-md',
+    additionalClass: 'w-28 h-12 mr-5 rounded-md px-3',
   },
 ];
