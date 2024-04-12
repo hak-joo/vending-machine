@@ -46,7 +46,7 @@ function Charge() {
           value={money === 0 ? '' : money}
           onChange={handleMoneyChange}
         />
-        <div className="my-4 mx-16">
+        <div className="my-4 flex">
           <MoneyBtnList
             checkUserMoney={false}
             onIncreaseMoney={handleIncreaseMoney}
