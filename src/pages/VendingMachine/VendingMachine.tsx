@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { useAtom } from 'jotai';
 import { insertedMoneyAtom, userAtom } from '@/store/atoms';
 import MoneySlotArea from './MoneySlotArea/MoneySlotArea';
+import Wallet from './Wallet/Wallet';
 
 function VendingMachine() {
   const [beverageList, setBeverageList] = useState<BeverageType[]>([]);
@@ -62,8 +63,8 @@ function VendingMachine() {
   };
 
   return (
-    <>
-      <div className="flex flex-col w-[700px] max-w-[1200px] min-w-[600px] h-full py-5 px-3 bg-green-700 rounded-lg">
+    <div className="flex justify-around w-full h-full min-w-[1080px]">
+      <div className="flex flex-col w-[700px] min-w-[700px] h-full py-5 px-3 bg-green-700 rounded-lg">
         <div className="w-11/12 h-2 self-center shadow-[0px_14px_8px_rgba(255,255,255,1)] z-10 rounded-lg" />
         <div className="basis-1/3 bg-gray-200 rounded-lg">
           <div className="grid grid-cols-6 px-3">
@@ -104,12 +105,8 @@ function VendingMachine() {
           ></div>
         </div>
       </div>
-      <div className="p-12 rounded-lg">
-        <p className="bg-beige text-2xl font-bold">
-          현재 보유한 금액: {user.money}
-        </p>
-      </div>
-    </>
+      <Wallet />
+    </div>
   );
 }
 
