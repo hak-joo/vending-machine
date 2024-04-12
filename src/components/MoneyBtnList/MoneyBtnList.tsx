@@ -12,18 +12,17 @@ function MoneyBtnList({ checkUserMoney, onIncreaseMoney }: MoneyBtnListType) {
   const [user, setUser] = useAtom(userAtom);
   const moneyList = chargeMoneyList.map((moneyBtn, index) => {
     const disabled = user.money < moneyBtn.money;
-    var moneyImg = <></>;
+    const imgBtnClassName =
+      moneyBtn.money < 1000 ? 'absolute' : 'absolute bottom-0 left-0';
 
-    if (moneyBtn.money >= 1000) {
-      moneyImg = (
-        <img
-          src={moneyBtn.imgUrl}
-          width={48}
-          height={48}
-          className="inline-block"
-        />
-      );
-    }
+    const moneyImg = (
+      <img
+        src={moneyBtn.imgUrl}
+        width={48}
+        height={48}
+        className={imgBtnClassName}
+      />
+    );
 
     return checkUserMoney ? (
       <CommonBtn
@@ -38,8 +37,8 @@ function MoneyBtnList({ checkUserMoney, onIncreaseMoney }: MoneyBtnListType) {
           'X'
         ) : (
           <>
+            <span className="z-50">{moneyBtn.money}</span>
             {moneyImg}
-            {moneyBtn.money}
           </>
         )}
       </CommonBtn>
@@ -52,8 +51,8 @@ function MoneyBtnList({ checkUserMoney, onIncreaseMoney }: MoneyBtnListType) {
         }}
       >
         <>
-          {moneyImg}
           {'+' + moneyBtn.money}
+          {moneyImg}
         </>
       </CommonBtn>
     );
