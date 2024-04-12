@@ -9,8 +9,7 @@ export const chargeMoneyList: ChargeMoneyType[] = [
     textColor: 'white',
     shape: 'circle',
     textAlign: 'center',
-    additionalClass:
-      "w-14 h-14 mt-1 mr-5 bg-[url('./src/assets/money100.png')] bg-cover font-normal",
+    additionalClass: 'w-14 h-14 mt-1 mr-5 font-normal',
   },
   {
     money: 500,
@@ -18,8 +17,7 @@ export const chargeMoneyList: ChargeMoneyType[] = [
     textColor: 'white',
     shape: 'circle',
     textAlign: 'center',
-    additionalClass:
-      "w-16 h-16 mr-5 bg-[url('./src/assets/money500.png')] bg-cover font-normal",
+    additionalClass: 'w-16 h-16 mr-5 font-normal',
   },
   {
     money: 1000,
