@@ -2,7 +2,7 @@ import { PropsWithChildren } from 'react';
 
 function GlobalView({ children }: PropsWithChildren) {
   return (
-    <div className="relative flex justify-center items-center w-full h-screen">
+    <div className="relative flex justify-center w-full min-h-[100svh]">
       {children}
     </div>
   );

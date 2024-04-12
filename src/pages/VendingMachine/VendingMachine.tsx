@@ -57,52 +57,45 @@ function VendingMachine() {
       alert('금액이 부족합니다.');
       return;
     }
+    if (selectedBeverages.length >= 5) {
+      alert('음료수를 먼저 받아주세요.');
+      return;
+    }
     selectedBeverage.stock--;
     setInsertedMoney(insertedMoney - selectedBeverage.price);
     setSelectedBeverages([...selectedBeverages, selectedBeverage]);
   };
 
   return (
-    <div className="flex justify-around w-full h-full min-w-[1080px]">
-      <div className="flex flex-col w-[700px] min-w-[700px] h-full py-5 px-3 bg-green-700 rounded-lg">
-        <div className="w-11/12 h-2 self-center shadow-[0px_14px_8px_rgba(255,255,255,1)] z-10 rounded-lg" />
-        <div className="basis-1/3 bg-gray-200 rounded-lg">
-          <div className="grid grid-cols-6 px-3">
+    <div className="flex justify-around w-full min-w-[1280px] lg:my-auto">
+      <div className="flex flex-col justify-around w-[700px] min-w-[700px] h-full py-5 px-3 bg-green-700 rounded-lg gap-10 max-h-[1080px]">
+        <div className="basis-7/12 flex bg-gray-100 rounded-lg">
+          <div className="grid grid-cols-6 px-3 lg:py-5">
             {beverageList.map((beverage) => (
               <Beverage
                 key={beverage.id}
                 beverage={beverage}
-                onSelectBeverage={handleSelectBeverage}
+                onSelectBeverage={() => handleSelectBeverage(beverage)}
               />
             ))}
           </div>
         </div>
-        <div className="w-full h-1 bg-black"></div>
-        <div className="basis-1/3">
-          <MoneySlotArea
-            insertedMoney={insertedMoney}
-            onRefundMoney={handleRefundMoney}
-            onIncreaseMoney={handleIncreaseMoney}
-          />
-        </div>
-        <div className="basis-1/3 bg-lime-300 p-2 relative">
-          <div
-            className="box-border bg-gray-300 p-2 absolute bottom-2 flex flex-row rounded-lg"
-            style={{ width: '50%', height: '50%' }}
-          >
-            {selectedBeverages.map((beverage, index) => (
-              <img
-                key={index}
-                src={beverage.imagePath}
-                className="w-full h-full object-contain rotate-90"
-                onClick={() => handleImageClick(index)}
-              ></img>
-            ))}
-          </div>
-          <div
-            className="box-border bg-gray-300 p-2 absolute right-8 rounded-lg"
-            style={{ width: '20%', height: '30%' }}
-          ></div>
+
+        <MoneySlotArea
+          insertedMoney={insertedMoney}
+          onRefundMoney={handleRefundMoney}
+          onIncreaseMoney={handleIncreaseMoney}
+        />
+
+        <div className="w-full min-h-[120px] box-border bg-green-800 flex flex-row rounded-lg">
+          {selectedBeverages.map((beverage, index) => (
+            <img
+              key={index}
+              src={beverage.imagePath}
+              className="object-contain rotate-90 w-32 animate-fade"
+              onClick={() => handleImageClick(index)}
+            ></img>
+          ))}
         </div>
       </div>
       <Wallet />
