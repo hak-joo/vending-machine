@@ -9,6 +9,8 @@ export default {
         transparent: 'transparent',
         current: 'currentColor',
         beige: '#fdf6da',
+        lightBlue: '#AAC1F0',
+        lightOrenge: '#D0B39B',
       },
     },
   },

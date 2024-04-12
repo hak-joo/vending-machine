@@ -13,20 +13,20 @@ function MoneySlotArea({
   onIncreaseMoney,
 }: MoneySlotAreaType) {
   return (
-    <div className="flex flex-col bg-lime-300 p-2">
-      <div className="">
-        <div className="text-lime-700 text-4xl font-bold bg-lime-300 border-4 border-lime-700 rounded-lg p-2 text-right">
-          넣은 돈: {insertedMoney}
+    <div className="flex flex-row bg-lime-300 p-2 rounded-lg">
+      <div className="flex flex-row mt-9">
+        <div className="w-80 h-16 text-green-200 text-4xl font-bold bg-gray-700 border-4 border-gray-800 rounded-lg p-2 text-right">
+          \{insertedMoney}
         </div>
-      </div>
-      <div className="flex flex-row p-2 justify-between">
         <CommonBtn
-          bgColor="purple"
-          additionalClass="w-20 h-14 mr-36"
+          additionalClass="w-14 h-14 align-top mx-2"
           onClick={onRefundMoney}
         >
-          잔돈 반환
+          <img src="src/assets/refund.png" width={50} height={50} />
         </CommonBtn>
+      </div>
+
+      <div className="grid grid-cols-2 gap-2 p-2 justify-items-center align-middle">
         <MoneyBtnList checkUserMoney={true} onIncreaseMoney={onIncreaseMoney} />
       </div>
     </div>
