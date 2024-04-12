@@ -1,4 +1,4 @@
-import { BeverageType } from './types.ts';
+import { BeverageType } from './Beverage';
 
 export const beverageList: Array<BeverageType> = [
   {

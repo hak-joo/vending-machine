@@ -1,5 +1,6 @@
 import CommonBtn from '@/components/CommanBtn/CommonBtn';
 import MoneyBtnList from '@/components/MoneyBtnList/MoneyBtnList';
+import { useCountingNumber } from '@/hooks/useCountNumber';
 
 interface MoneySlotAreaType {
   insertedMoney: number;
@@ -12,11 +13,12 @@ function MoneySlotArea({
   onRefundMoney,
   onIncreaseMoney,
 }: MoneySlotAreaType) {
+  const insertedCountingMoney = useCountingNumber(insertedMoney);
   return (
     <div className="flex flex-row bg-lime-300 p-2 rounded-lg">
       <div className="flex flex-row mt-9">
         <div className="w-80 h-16 text-green-200 text-4xl font-bold bg-gray-700 border-4 border-gray-800 rounded-lg p-2 text-right">
-          \{insertedMoney}
+          \{insertedCountingMoney}
         </div>
         <CommonBtn
           additionalClass="w-14 h-14 align-top mx-2"

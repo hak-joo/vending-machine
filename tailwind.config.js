@@ -12,6 +12,9 @@ export default {
         lightBlue: '#AAC1F0',
         lightOrenge: '#D0B39B',
       },
+      backgroundImage: {
+        phone: "url('/src/assets/cellphone.png')",
+      },
     },
   },
   plugins: [],
