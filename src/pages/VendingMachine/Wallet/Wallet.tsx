@@ -16,7 +16,7 @@ function Wallet() {
   const countMoney = useCountingNumber(user.money);
 
   return (
-    <div className="flex justify-center items-center w-[500px] min-w-[500px] h-full ">
+    <div className="flex self-center w-[500px] min-w-[500px] ">
       <div className="bg-phone w-9/12 h-[600px] bg-contain bg-no-repeat">
         <div className="px-20 py-20 h-full">
           <div className="w-full h-full flex flex-col">
