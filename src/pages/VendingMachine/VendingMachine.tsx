@@ -75,7 +75,7 @@ function VendingMachine() {
               <Beverage
                 key={beverage.id}
                 beverage={beverage}
-                onSelectBeverage={() => handleSelectBeverage(beverage)}
+                onSelectBeverage={handleSelectBeverage}
               />
             ))}
           </div>
