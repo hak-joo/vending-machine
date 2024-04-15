@@ -1,4 +1,4 @@
-import { beverageList } from '@/pages/VendingMachine/Beverage/datas';
+import { beverageList } from '@/pages/VendingMachine/Beverage/datas.tsx';
 
 const fetchBeverageList = () => {
   return beverageList;

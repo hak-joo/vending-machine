@@ -9,7 +9,9 @@ export type Colors =
   | 'yellow'
   | 'green'
   | 'black'
-  | 'white';
+  | 'white'
+  | 'lightBlue'
+  | 'lightOrenge';
 
 export type ButtonTextAlign = 'center' | 'right' | 'left';
 
@@ -20,4 +22,7 @@ export interface CommandBtnType {
   shape?: ButtonShapes;
   textAlign?: ButtonTextAlign;
   additionalClass?: string;
+  disabled?: boolean;
+  type: 'submit' | 'button' | 'reset' | undefined;
+  description: string;
 }
