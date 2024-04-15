@@ -8,7 +8,7 @@ export interface InsertedMoneyType {
 
 export const InsertedMoneyContext = createContext({
   insertedMoney: 0,
-  increaseInsertedMoney: (money: number) => {},
+  increaseInsertedMoney: (_money: number) => {},
   resetInsertedMoney: () => {},
 });
 
