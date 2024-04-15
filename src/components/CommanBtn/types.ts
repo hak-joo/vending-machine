@@ -24,5 +24,5 @@ export interface CommandBtnType {
   additionalClass?: string;
   disabled?: boolean;
   type: 'submit' | 'button' | 'reset' | undefined;
-  description?: string;
+  description: string;
 }

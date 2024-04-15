@@ -4,6 +4,8 @@ import type { ChargeMoneyType } from './types.ts';
 // 가격, className이 정의
 export const chargeMoneyList: ChargeMoneyType[] = [
   {
+    type: 'button',
+    description: '100원 충전',
     money: 100,
     imgurl: 'src/assets/money100.png',
     textColor: 'white',
@@ -12,6 +14,8 @@ export const chargeMoneyList: ChargeMoneyType[] = [
     additionalClass: 'w-14 h-14 mt-1 mr-5 font-normal',
   },
   {
+    type: 'button',
+    description: '500원 충전',
     money: 500,
     imgurl: 'src/assets/money500.png',
     textColor: 'white',
@@ -20,6 +24,8 @@ export const chargeMoneyList: ChargeMoneyType[] = [
     additionalClass: 'w-16 h-16 mr-5 font-normal',
   },
   {
+    type: 'button',
+    description: '1000원 충전',
     money: 1000,
     imgurl: 'src/assets/money1000.png',
     bgColor: 'lightBlue',
@@ -30,6 +36,8 @@ export const chargeMoneyList: ChargeMoneyType[] = [
     additionalClass: 'w-28 h-12 mr-5 mt-2 rounded-md px-3',
   },
   {
+    type: 'button',
+    description: '5000원 충전',
     money: 5000,
     imgurl: 'src/assets/money5000.png',
     bgColor: 'lightOrenge',

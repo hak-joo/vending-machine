@@ -43,8 +43,6 @@ function MoneyBtnList({ checkUserMoney, onIncreaseMoney }: MoneyBtnListType) {
         border={isDisabled ? 'red' : moneyBtn.border}
         onClick={() => onIncreaseMoney(moneyBtn?.money)}
         disabled={isDisabled}
-        type="button"
-        description={`${moneyBtn.money}원 충전`}
       >
         {buttonContent}
       </CommonBtn>

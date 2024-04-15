@@ -1,6 +1,7 @@
 import CommonBtn from '@/components/CommanBtn/CommonBtn';
 import MoneyBtnList from '@/components/MoneyBtnList/MoneyBtnList';
 import { useCountingNumber } from '@/hooks/useCountNumber';
+import { refundBtnClassName } from './datas';
 
 interface MoneySlotAreaType {
   insertedMoney: number;
@@ -20,12 +21,7 @@ function MoneySlotArea({
         <div className="w-80 h-16 text-green-200 text-4xl font-bold bg-gray-700 border-4 border-gray-800 rounded-lg p-2 text-right">
           \{insertedCountingMoney}
         </div>
-        <CommonBtn
-          additionalClass="w-14 h-14 align-top mx-2"
-          onClick={onRefundMoney}
-          type="button"
-          description="잔돈 반환"
-        >
+        <CommonBtn {...refundBtnClassName} onClick={onRefundMoney}>
           <img src="src/assets/refund.png" width={50} height={50} />
         </CommonBtn>
       </div>
