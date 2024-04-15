@@ -36,14 +36,14 @@ $ pnpm dev
 
 ### 1️⃣ 사용자 금액 충전
 
-![IMG_9468](https://github.com/hak-joo/vending-machine/assets/52451420/5ce63f7a-87c7-4e79-83d9-1988663ef47e)
+![IMG_9481](https://github.com/hak-joo/vending-machine/assets/52451420/ae0f7978-4408-460c-aea4-6724b68d1fe7)
 
 - 원하는 금액 수동 입력 가능
 - 100/500/1000/5000 단위의 버튼을 통해 금액 증가 가능
 
 ### 2️⃣ 자판기 금액 투입
 
-![IMG_9469](https://github.com/hak-joo/vending-machine/assets/52451420/8ad3f259-a15f-4544-8236-a4f7a5634b39)
+![IMG_9475](https://github.com/hak-joo/vending-machine/assets/52451420/10f42bbd-d0cc-4bc3-a3f8-976a8f845520)
 
 - 100/500/1000/5000 단위의 버튼을 통해 금액 투입 가능
 - 투입된 금액에 따라 음료 선택 여부가 결정됨(❌-불가, 🟢-가능)
@@ -52,13 +52,13 @@ $ pnpm dev
 
 ### 3️⃣ 자판기 잔돈 반환
 
-![IMG_9470](https://github.com/hak-joo/vending-machine/assets/52451420/b664e737-f8ad-4171-b43d-9c6648c20fd4)
+![IMG_9479](https://github.com/hak-joo/vending-machine/assets/52451420/7fdcfe82-fbfc-42c8-84cb-3e2b855f2170)
 
 - 잔돈 반환 버튼(<img src="./src/assets/refund.png" width="20" height="20"/>) 클릭 시 사용자의 계좌로 잔돈 반환
 
 ### 4️⃣ 음료 선택
 
-![IMG_9471](https://github.com/hak-joo/vending-machine/assets/52451420/a9f0cf70-c0c7-49af-962b-039e18396446)
+![IMG_9480](https://github.com/hak-joo/vending-machine/assets/52451420/2c7cf3bf-cb5e-44d8-ace5-e987446a8eea)
 
 - 구입 가능한 음료 선택 시 배출구에 음료 확인 가능
 - 배출구의 음료 선택 시 삭제됨
