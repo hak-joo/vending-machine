@@ -48,3 +48,19 @@ export const chargeMoneyList: ChargeMoneyType[] = [
     additionalClass: 'w-28 h-12 mr-5 mt-2 rounded-md px-3',
   },
 ];
+
+export function getMoneyBtnContent(moneyBtn: ChargeMoneyType) {
+  const imgClassName =
+    moneyBtn.money < 1000 ? 'absolute' : 'absolute bottom-0 left-0';
+  return (
+    <>
+      <span className="z-50">{moneyBtn.money}</span>
+      <img
+        src={moneyBtn.imgurl}
+        width={48}
+        height={48}
+        className={imgClassName}
+      />
+    </>
+  );
+}

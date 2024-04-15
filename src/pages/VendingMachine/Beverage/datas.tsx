@@ -89,6 +89,7 @@ export const beverageList: Array<BeverageType> = [
 
 export function purchaseIdentifyIcon(canPurchase: boolean) {
   if (canPurchase) {
+    // O
     return (
       <svg
         className="h-3 w-3 text-green-500 mr-1"
@@ -103,6 +104,7 @@ export function purchaseIdentifyIcon(canPurchase: boolean) {
       </svg>
     );
   } else {
+    // X
     return (
       <svg
         className="h-3 w-3 text-red-500 mr-0.5"
