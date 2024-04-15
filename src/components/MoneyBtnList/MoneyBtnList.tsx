@@ -11,29 +11,30 @@ interface MoneyBtnListType {
 function MoneyBtnList({ checkUserMoney, onIncreaseMoney }: MoneyBtnListType) {
   const [user, setUser] = useAtom(userAtom);
   const moneyList = chargeMoneyList.map((moneyBtn, index) => {
-    const disabled = user.money < moneyBtn.money;
-    const imgBtnClassName =
-      moneyBtn.money < 1000 ? 'absolute' : 'absolute bottom-0 left-0';
+    const isEnoughMoney = user.money < moneyBtn.money;
+    const isDisabled = checkUserMoney && isEnoughMoney;
 
+    const imgClassName =
+      moneyBtn.money < 1000 ? 'absolute' : 'absolute bottom-0 left-0';
     const moneyImg = (
       <img
         src={moneyBtn.imgurl}
         width={48}
         height={48}
-        className={imgBtnClassName}
+        className={imgClassName}
       />
     );
 
-    return checkUserMoney ? (
+    return (
       <CommonBtn
         key={index}
         {...moneyBtn}
-        bgColor={disabled ? 'red' : moneyBtn.bgColor}
-        border={disabled ? 'red' : moneyBtn.border}
+        bgColor={isDisabled ? 'red' : moneyBtn.bgColor}
+        border={isDisabled ? 'red' : moneyBtn.border}
         onClick={() => onIncreaseMoney(moneyBtn?.money)}
-        disabled={disabled}
+        disabled={isDisabled}
       >
-        {disabled ? (
+        {isDisabled ? (
           'X'
         ) : (
           <>
@@ -41,19 +42,6 @@ function MoneyBtnList({ checkUserMoney, onIncreaseMoney }: MoneyBtnListType) {
             {moneyImg}
           </>
         )}
-      </CommonBtn>
-    ) : (
-      <CommonBtn
-        key={index}
-        {...moneyBtn}
-        onClick={() => {
-          onIncreaseMoney(moneyBtn?.money);
-        }}
-      >
-        <>
-          {'+' + moneyBtn.money}
-          {moneyImg}
-        </>
       </CommonBtn>
     );
   });
