@@ -39,6 +39,8 @@ function Wallet() {
                   shape="circle"
                   border="gray"
                   onClick={handleChargeLink}
+                  type="button"
+                  description={`충전 페이지`}
                 >
                   충전
                 </CommonBtn>

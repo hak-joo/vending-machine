@@ -23,4 +23,6 @@ export interface CommandBtnType {
   textAlign?: ButtonTextAlign;
   additionalClass?: string;
   disabled?: boolean;
+  type: 'submit' | 'button' | 'reset' | undefined;
+  description?: string;
 }

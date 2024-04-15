@@ -23,6 +23,8 @@ function MoneySlotArea({
         <CommonBtn
           additionalClass="w-14 h-14 align-top mx-2"
           onClick={onRefundMoney}
+          type="button"
+          description="잔돈 반환"
         >
           <img src="src/assets/refund.png" width={50} height={50} />
         </CommonBtn>

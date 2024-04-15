@@ -52,7 +52,12 @@ function Charge() {
             onIncreaseMoney={handleIncreaseMoney}
           />
         </div>
-        <CommonBtn {...chargeBtnClassName} onClick={chargeMoney}>
+        <CommonBtn
+          {...chargeBtnClassName}
+          onClick={chargeMoney}
+          type="button"
+          description="잔액 충전"
+        >
           충전
         </CommonBtn>
         <p className="font-bold m-2">현재 잔액 : {user.money}</p>
