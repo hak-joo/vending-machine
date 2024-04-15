@@ -44,7 +44,7 @@ function Beverage({
           ref={imgRef}
           className={isSoldOut ? 'opacity-30' : ''}
         />
-        <div className=" bottom-7 absolute w-full h-1.5 shadow-[0px_-5px_15px_rgba(255,255,255,1)]" />
+        <div className="bottom-7 absolute w-full h-1.5 shadow-[0px_-5px_15px_rgba(255,255,255,1)]" />
         <h2 className="font-extrabold w-full flex justify-center bg-blue-300 py-0.5 rounded-t-md ">
           {beverage.name}
         </h2>

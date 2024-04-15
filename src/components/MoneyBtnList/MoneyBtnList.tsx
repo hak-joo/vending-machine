@@ -1,7 +1,7 @@
 import CommonBtn from '@/components/CommanBtn/CommonBtn';
 import { useAtom } from 'jotai';
 import { userAtom } from '@/store/atoms';
-import { chargeMoneyList } from './data.ts';
+import { chargeMoneyList, getMoneyBtnContent } from './data.tsx';
 
 interface MoneyBtnListType {
   checkUserMoney: boolean;
@@ -14,26 +14,7 @@ function MoneyBtnList({ checkUserMoney, onIncreaseMoney }: MoneyBtnListType) {
     const isEnoughMoney = user.money >= moneyBtn.money;
     const isDisabled = checkUserMoney && !isEnoughMoney;
 
-    const imgClassName =
-      moneyBtn.money < 1000 ? 'absolute' : 'absolute bottom-0 left-0';
-
-    const moneyImg = (
-      <img
-        src={moneyBtn.imgurl}
-        width={48}
-        height={48}
-        className={imgClassName}
-      />
-    );
-
-    const buttonContent = isDisabled ? (
-      'X'
-    ) : (
-      <>
-        <span className="z-50">{moneyBtn.money}</span>
-        {moneyImg}
-      </>
-    );
+    const buttonContent = isDisabled ? 'X' : getMoneyBtnContent(moneyBtn);
 
     return (
       <CommonBtn
@@ -41,7 +22,7 @@ function MoneyBtnList({ checkUserMoney, onIncreaseMoney }: MoneyBtnListType) {
         {...moneyBtn}
         bgColor={isDisabled ? 'red' : moneyBtn.bgColor}
         border={isDisabled ? 'red' : moneyBtn.border}
-        onClick={() => onIncreaseMoney(moneyBtn?.money)}
+        onClick={() => onIncreaseMoney(moneyBtn.money)}
         disabled={isDisabled}
       >
         {buttonContent}
