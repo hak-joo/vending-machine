@@ -52,9 +52,14 @@ function Beverage({
       </div>
       <div className="flex w-full justify-center bg-gray-300 py-1 shadow-[2px_2px_8px_rgba(0,0,0,0.2)]">
         <CommonBtn
+          type="button"
           bgColor="black"
           additionalClass="w-20 h-7 rounded-lg text-white"
           onClick={() => handlePurchase(beverage)}
+          disabled={
+            insertedMoney >= beverage.price && beverage.stock > 0 ? false : true
+          }
+          description={`${beverage.name} ${beverage.price} 원 구매`}
         >
           {purchaseIdentifyIcon(canPurchase)}
           {beverage.price}원

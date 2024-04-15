@@ -14,11 +14,23 @@ function CommonBtn({
   additionalClass,
   children,
   disabled,
+  type,
+  description,
   ...props
 }: CommonBtnProps) {
+  const getRole = () => {
+    return props.onClick?.toString().includes('navigate')
+      ? 'navigation'
+      : 'button';
+  };
+
   return (
     <button
+      type={type}
+      aria-label={description}
       disabled={disabled}
+      aria-disabled={disabled}
+      role={getRole()}
       className={twMerge(
         clsx(
           ButtonVariants({

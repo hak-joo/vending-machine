@@ -24,6 +24,8 @@ function Navigator() {
             bgColor={color}
             textColor="white"
             onClick={() => handleLink(route.path)}
+            description={`${route.title} 페이지 이동`}
+            type="button"
           >
             {route.title}
           </CommonBtn>
