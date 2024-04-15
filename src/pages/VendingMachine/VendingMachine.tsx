@@ -6,6 +6,7 @@ import { useAtom } from 'jotai';
 import { insertedMoneyAtom, userAtom } from '@/store/atoms';
 import MoneySlotArea from './MoneySlotArea/MoneySlotArea';
 import Wallet from './Wallet/Wallet';
+import DispensingArea from './DispensingArea/DispensingArea';
 
 function VendingMachine() {
   const [beverageList, setBeverageList] = useState<BeverageType[]>([]);
@@ -80,23 +81,15 @@ function VendingMachine() {
             ))}
           </div>
         </div>
-
         <MoneySlotArea
           insertedMoney={insertedMoney}
           onRefundMoney={handleRefundMoney}
           onIncreaseMoney={handleIncreaseMoney}
         />
-
-        <div className="w-full min-h-[120px] box-border bg-green-800 flex flex-row rounded-lg">
-          {selectedBeverages.map((beverage, index) => (
-            <img
-              key={index}
-              src={beverage.imagePath}
-              className="object-contain rotate-90 w-32 animate-fade"
-              onClick={() => handleImageClick(index)}
-            ></img>
-          ))}
-        </div>
+        <DispensingArea
+          beverages={selectedBeverages}
+          handleImageClick={handleImageClick}
+        />
       </div>
       <Wallet />
     </div>

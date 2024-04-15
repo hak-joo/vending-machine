@@ -9,13 +9,14 @@ interface MoneyBtnListType {
 }
 
 function MoneyBtnList({ checkUserMoney, onIncreaseMoney }: MoneyBtnListType) {
-  const [user, setUser] = useAtom(userAtom);
+  const [user] = useAtom(userAtom);
   const moneyList = chargeMoneyList.map((moneyBtn, index) => {
-    const isEnoughMoney = user.money < moneyBtn.money;
-    const isDisabled = checkUserMoney && isEnoughMoney;
+    const isEnoughMoney = user.money >= moneyBtn.money;
+    const isDisabled = checkUserMoney && !isEnoughMoney;
 
     const imgClassName =
       moneyBtn.money < 1000 ? 'absolute' : 'absolute bottom-0 left-0';
+
     const moneyImg = (
       <img
         src={moneyBtn.imgurl}
@@ -23,6 +24,15 @@ function MoneyBtnList({ checkUserMoney, onIncreaseMoney }: MoneyBtnListType) {
         height={48}
         className={imgClassName}
       />
+    );
+
+    const buttonContent = isDisabled ? (
+      'X'
+    ) : (
+      <>
+        <span className="z-50">{moneyBtn.money}</span>
+        {moneyImg}
+      </>
     );
 
     return (
@@ -34,19 +44,12 @@ function MoneyBtnList({ checkUserMoney, onIncreaseMoney }: MoneyBtnListType) {
         onClick={() => onIncreaseMoney(moneyBtn?.money)}
         disabled={isDisabled}
       >
-        {isDisabled ? (
-          'X'
-        ) : (
-          <>
-            <span className="z-50">{moneyBtn.money}</span>
-            {moneyImg}
-          </>
-        )}
+        {buttonContent}
       </CommonBtn>
     );
   });
 
-  return <>{moneyList}</>;
+  return moneyList;
 }
 
 export default MoneyBtnList;
