@@ -86,3 +86,37 @@ export const beverageList: Array<BeverageType> = [
     stock: 100,
   },
 ];
+
+export function purchaseIdentifyIcon(canPurchase: boolean) {
+  if (canPurchase) {
+    return (
+      <svg
+        className="h-3 w-3 text-green-500 mr-1"
+        viewBox="0 0 24 24"
+        strokeWidth="1"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" />
+        <circle cx="12" cy="12" r="9" fill="currentColor" />
+      </svg>
+    );
+  } else {
+    return (
+      <svg
+        className="h-3 w-3 text-red-500 mr-0.5"
+        viewBox="0 0 24 24"
+        strokeWidth="5"
+        stroke="currentColor"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" />
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    );
+  }
+}
