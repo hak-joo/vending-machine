@@ -8,7 +8,7 @@ export const useCountingNumber = (value: number) => {
   const [count, setCount] = useState(0);
   const [lastCount, setLastCount] = useState(0);
 
-  const duration = 2000;
+  const duration = 1000;
   const frameRate = 1000 / 60;
   const totalFrame = Math.round(duration / frameRate);
 
