@@ -17,7 +17,7 @@ function MoneyBtnList({ checkUserMoney, onIncreaseMoney }: MoneyBtnListType) {
 
     const moneyImg = (
       <img
-        src={moneyBtn.imgUrl}
+        src={moneyBtn.imgurl}
         width={48}
         height={48}
         className={imgBtnClassName}

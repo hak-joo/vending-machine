@@ -5,7 +5,7 @@ import type { ChargeMoneyType } from './types.ts';
 export const chargeMoneyList: ChargeMoneyType[] = [
   {
     money: 100,
-    imgUrl: 'src/assets/money100.png',
+    imgurl: 'src/assets/money100.png',
     textColor: 'white',
     shape: 'circle',
     textAlign: 'center',
@@ -13,7 +13,7 @@ export const chargeMoneyList: ChargeMoneyType[] = [
   },
   {
     money: 500,
-    imgUrl: 'src/assets/money500.png',
+    imgurl: 'src/assets/money500.png',
     textColor: 'white',
     shape: 'circle',
     textAlign: 'center',
@@ -21,7 +21,7 @@ export const chargeMoneyList: ChargeMoneyType[] = [
   },
   {
     money: 1000,
-    imgUrl: 'src/assets/money1000.png',
+    imgurl: 'src/assets/money1000.png',
     bgColor: 'lightBlue',
     textColor: 'white',
     shape: 'rectangle',
@@ -31,7 +31,7 @@ export const chargeMoneyList: ChargeMoneyType[] = [
   },
   {
     money: 5000,
-    imgUrl: 'src/assets/money5000.png',
+    imgurl: 'src/assets/money5000.png',
     bgColor: 'lightOrenge',
     textColor: 'white',
     shape: 'rectangle',
