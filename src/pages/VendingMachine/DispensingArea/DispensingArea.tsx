@@ -13,6 +13,7 @@ function DispensingArea({ beverages, handleImageClick }: DispensingAreaProps) {
           src={beverage.imagePath}
           className="object-contain rotate-90 w-32 animate-fade"
           onClick={() => handleImageClick(index)}
+          alt={beverage.name}
         />
       ))}
     </div>
