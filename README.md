@@ -30,7 +30,7 @@ $ pnpm dev
 
 ## 컴포넌트 구조
 
-![IMG_9467](https://github.com/hak-joo/vending-machine/assets/52451420/f5b58341-30e8-44bf-8123-67701c53e85e)
+![자판기컴포넌트구조](https://github.com/hak-joo/vending-machine/assets/52451420/0ad0572b-59c2-4d89-ab70-251a1a8bac7e)
 
 ## 주요 기능
 
