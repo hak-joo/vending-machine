@@ -2,6 +2,7 @@ import CommonBtn from '@/components/CommanBtn/CommonBtn';
 import MoneyBtnList from '@/components/MoneyBtnList/MoneyBtnList';
 import { useCountingNumber } from '@/hooks/useCountNumber';
 import { refundBtnClassName } from './datas';
+import refundImg from '@/assets/refund.png';
 
 interface MoneySlotAreaType {
   insertedMoney: number;
@@ -22,7 +23,7 @@ function MoneySlotArea({
           \{insertedCountingMoney}
         </div>
         <CommonBtn {...refundBtnClassName} onClick={onRefundMoney}>
-          <img src="src/assets/refund.png" width={50} height={50} />
+          <img src={refundImg} width={50} height={50} />
         </CommonBtn>
       </div>
 

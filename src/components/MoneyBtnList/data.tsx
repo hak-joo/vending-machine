@@ -1,5 +1,10 @@
 import type { ChargeMoneyType } from './types.ts';
 
+import money100Img from '@/assets/money100.png';
+import money500Img from '@/assets/money500.png';
+import money1000Img from '@/assets/money1000.png';
+import money5000Img from '@/assets/money5000.png';
+
 // 충전 금액 리스트
 // 가격, className이 정의
 export const chargeMoneyList: ChargeMoneyType[] = [
@@ -7,7 +12,7 @@ export const chargeMoneyList: ChargeMoneyType[] = [
     type: 'button',
     description: '100원 충전',
     money: 100,
-    imgurl: 'src/assets/money100.png',
+    imgurl: money100Img,
     textColor: 'white',
     shape: 'circle',
     textAlign: 'center',
@@ -17,7 +22,7 @@ export const chargeMoneyList: ChargeMoneyType[] = [
     type: 'button',
     description: '500원 충전',
     money: 500,
-    imgurl: 'src/assets/money500.png',
+    imgurl: money500Img,
     textColor: 'white',
     shape: 'circle',
     textAlign: 'center',
@@ -27,7 +32,7 @@ export const chargeMoneyList: ChargeMoneyType[] = [
     type: 'button',
     description: '1000원 충전',
     money: 1000,
-    imgurl: 'src/assets/money1000.png',
+    imgurl: money1000Img,
     bgColor: 'lightBlue',
     textColor: 'white',
     shape: 'rectangle',
@@ -39,7 +44,7 @@ export const chargeMoneyList: ChargeMoneyType[] = [
     type: 'button',
     description: '5000원 충전',
     money: 5000,
-    imgurl: 'src/assets/money5000.png',
+    imgurl: money5000Img,
     bgColor: 'lightOrenge',
     textColor: 'white',
     shape: 'rectangle',
