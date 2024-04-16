@@ -4,7 +4,6 @@ import { useAtom } from 'jotai';
 import { userAtom } from '@/store/atoms';
 import MoneyBtnList from '@/components/MoneyBtnList/MoneyBtnList';
 import CommonBtn from '@/components/CommanBtn/CommonBtn';
-import '@/styles/charge/Charge.css';
 import { chargeBtnClassName } from './datas';
 
 function Charge() {
@@ -26,7 +25,7 @@ function Charge() {
 
   const handleMoneyChange = (e: ChangeEvent<HTMLInputElement>) => {
     const inputMoney = e.target.value;
-    const replaceMoney = inputMoney.replace(/(^0+)/, '');
+    const replaceMoney = inputMoney.replace(/[^0-9]/g, '');
     setMoney(Number(replaceMoney));
   };
 
@@ -39,7 +38,6 @@ function Charge() {
       <div className="w-1/2 h-1/2 flex flex-col items-center border border-indigo-500/50 rounded-lg">
         <p className="text-lg text-cyan-600 mt-10 mb-2">사용자 금액 충전</p>
         <input
-          type="number"
           id="money"
           className="w-56 border border-gray-500 rounded-lg m-2 pr-2 text-right block appearance-none"
           placeholder="금액"
