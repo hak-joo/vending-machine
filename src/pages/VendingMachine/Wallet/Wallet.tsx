@@ -30,7 +30,10 @@ function Wallet() {
               <div className="w-full flex h-16 my-3 justify-around items-center">
                 <div className="flex flex-col flex-1 ">
                   <div className="text-xs">주거래 은행</div>
-                  <div className="text-2xl">
+                  <div
+                    className="max-w-36 text-2xl text-ellipsis overflow-hidden"
+                    title={`보유 잔액: ${countMoney.toLocaleString('ko-KR')}`}
+                  >
                     {countMoney.toLocaleString('ko-KR')}
                   </div>
                 </div>

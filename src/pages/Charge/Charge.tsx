@@ -60,7 +60,12 @@ function Charge() {
         >
           충전
         </CommonBtn>
-        <p className="font-bold m-2">현재 잔액 : {user.money}</p>
+        <p
+          className="m-2 max-w-48 text-ellipsis overflow-hidden whitespace-nowrap"
+          title={`현재 잔액: ${user.money.toLocaleString('ko-KR')}`}
+        >
+          {`현재 잔액: ${user.money.toLocaleString('ko-KR')}`}
+        </p>
       </div>
     </div>
   );
