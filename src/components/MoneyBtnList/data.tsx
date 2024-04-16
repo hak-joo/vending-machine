@@ -65,6 +65,7 @@ export function getMoneyBtnContent(moneyBtn: ChargeMoneyType) {
         width={48}
         height={48}
         className={imgClassName}
+        alt={`${moneyBtn.money} 충전`}
       />
     </>
   );

@@ -23,7 +23,7 @@ function MoneySlotArea({
           \{insertedCountingMoney}
         </div>
         <CommonBtn {...refundBtnClassName} onClick={onRefundMoney}>
-          <img src={refundImg} width={50} height={50} />
+          <img src={refundImg} width={50} height={50} alt="반환" />
         </CommonBtn>
       </div>
 
