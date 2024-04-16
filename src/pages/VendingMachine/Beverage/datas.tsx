@@ -1,88 +1,100 @@
 import { BeverageType } from './Beverage';
+import cokeImg from '@/assets/coke.png';
+import drpepperImg from '@/assets/drpepper.png';
+import fantaImg from '@/assets/fanta.png';
+import chilsungCiderImg from '@/assets/chilsung-cider.png';
+import cocopalmImg from '@/assets/cocopalm.png';
+import hot6Img from '@/assets/hot6.png';
+import pepsiImg from '@/assets/pepsi.png';
+import sparklingAppleImg from '@/assets/sparkling-apple.png';
+import sparklingPeachImg from '@/assets/sparkling-peach.png';
+import welchsImg from '@/assets/welchs.png';
+import sunkistImg from '@/assets/sunkist.png';
+import spriteImg from '@/assets/sprite.png';
 
 export const beverageList: Array<BeverageType> = [
   {
     id: 1,
     name: '코카콜라',
     price: 1500,
-    imagePath: 'src/assets/coke.png',
+    imagePath: cokeImg,
     stock: 100,
   },
   {
     id: 2,
     name: '닥터페퍼',
     price: 1000,
-    imagePath: 'src/assets/drpepper.png',
+    imagePath: drpepperImg,
     stock: 100,
   },
   {
     id: 3,
     name: '환타',
     price: 1000,
-    imagePath: 'src/assets/fanta.png',
+    imagePath: fantaImg,
     stock: 0,
   },
   {
     id: 4,
     name: '칠성사이다',
     price: 1000,
-    imagePath: 'src/assets/chilsung-cider.png',
+    imagePath: chilsungCiderImg,
     stock: 100,
   },
   {
     id: 5,
     name: '코코팜',
     price: 1000,
-    imagePath: 'src/assets/cocopalm.png',
+    imagePath: cocopalmImg,
     stock: 100,
   },
   {
     id: 6,
     name: '핫식스',
     price: 1600,
-    imagePath: 'src/assets/hot6.png',
+    imagePath: hot6Img,
     stock: 100,
   },
   {
     id: 7,
     name: '펩시',
     price: 1000,
-    imagePath: 'src/assets/pepsi.png',
+    imagePath: pepsiImg,
     stock: 100,
   },
   {
     id: 8,
     name: '스파클링 애플',
     price: 1300,
-    imagePath: 'src/assets/sparkling-apple.png',
+    imagePath: sparklingAppleImg,
     stock: 0,
   },
   {
     id: 9,
     name: '스파클링 피치',
     price: 1300,
-    imagePath: 'src/assets/sparkling-peach.png',
+    imagePath: sparklingPeachImg,
     stock: 100,
   },
   {
     id: 10,
     name: '웰치스',
     price: 800,
-    imagePath: 'src/assets/welchs.png',
+    imagePath: welchsImg,
     stock: 100,
   },
   {
     id: 11,
     name: '썬키스트',
     price: 1500,
-    imagePath: 'src/assets/sunkist.png',
+    imagePath: sunkistImg,
     stock: 0,
   },
   {
     id: 12,
     name: '스프라이트',
     price: 1200,
-    imagePath: 'src/assets/sprite.png',
+    imagePath: spriteImg,
     stock: 100,
   },
 ];
